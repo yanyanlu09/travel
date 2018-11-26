@@ -19,7 +19,9 @@
 		name:'HomeHeader'
 	}
 </script>
+<!-- 原始写法 -->
 <!-- @import '../../../assets/styles/varibles.styl' -->
+<!-- 使用@符写法 -->
 <!-- @import '~@/assets/styles/varibles.styl' -->
 <!-- @import '~styles/varibles.styl'  这个是在config中配置过的写法 -->
 <style lang="stylus" scoped>
