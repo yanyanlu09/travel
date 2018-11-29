@@ -34,7 +34,7 @@ export default{
 
 <style lang='stylus' scoped>
 	.wrapper >>> .swiper-pagination-bullet-active
-		background:#fff !important
+		background:#red !important
 	.wrapper
 		overflow:hidden
 		width:100%
