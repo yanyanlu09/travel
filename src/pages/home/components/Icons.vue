@@ -21,45 +21,11 @@
 			return {
 				swiperOption:{
 					autoplay:false
-				},
-				iconList:[{
-					id:'0001',
-					imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-					desc:'景点门票',
-				},{
-					id:'0002',
-					imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-					desc:'滑雪季',
-				},{
-					id:'0003',
-					imgUrl:'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-					desc:'泡温泉',
-				},{
-					id:'0004',
-					imgUrl:'https://img1.qunarzz.com/piao/fusion/1811/1d/c46140e32fffa502.png',
-					desc:'动植物园',
-				},{
-					id:'0005',
-					imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-					desc:'一日游',
-				},{
-					id:'0006',
-					imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/c1/6f15f887179fa002.png',
-					desc:'必游榜单',
-				},{
-					id:'0007',
-					imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png',
-					desc:'自然风光',
-				},{
-					id:'0008',
-					imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-					desc:'出境游',
-				},{
-					id:'0009',
-					imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-					desc:'汽车票',
-				}]
+				}
 			}
+		},
+		props:{
+			iconList:Array
 		},
 		computed:{
 			pages () {

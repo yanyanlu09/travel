@@ -2,7 +2,7 @@
 	<div>
 		<div class="title">周末去哪儿</div>
 		<ul>
-			<li class="item" v-for="item of recommendList" :key="item.id">
+			<li class="item" v-for="item of weekendList" :key="item.id">
 				<div class="item-img-warpper">
 					<img class="item-img" :src="item.imgUrl"/>
 				</div>
@@ -20,23 +20,10 @@
 		name:'HomeWeekens',
 		data () {
 			return {
-				recommendList:[{
-					id:'001',
-					imgUrl:'http://img1.qunarzz.com/sight/source/1811/ed/bf2bc72af591d5.jpg_r_640x214_f9f1bfcc.jpg',
-					title:'扬州温泉必游',
-					desc:'冬天来啦，我们热热的泡个热汤！'
-				},{
-					id:'002',
-					imgUrl:'http://img1.qunarzz.com/sight/source/1811/ed/bf2bc72af591d5.jpg_r_640x214_f9f1bfcc.jpg',
-					title:'扬州温泉必游',
-					desc:'冬天来啦，我们热热的泡个热汤！'
-				},{
-					id:'003',
-					imgUrl:'http://img1.qunarzz.com/sight/source/1811/ed/bf2bc72af591d5.jpg_r_640x214_f9f1bfcc.jpg',
-					title:'扬州温泉必游',
-					desc:'冬天来啦，我们热热的泡个热汤！'
-				}]
 			}
+		},
+		props:{
+			weekendList:Array
 		}
 	}
 </script>

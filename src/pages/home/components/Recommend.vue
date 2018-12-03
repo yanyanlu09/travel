@@ -22,23 +22,11 @@
 		name:'HomeRecommend',
 		data () {
 			return {
-				recommendList:[{
-					id:'001',
-					imgUrl:'http://img1.qunarzz.com/sight/p0/1505/f4/f455d92ba582f608.water.jpg_200x200_375e5775.jpg',
-					title:'南京汤山颐尚温泉',
-					desc:'融古今美酒之精华——有通筋活血'
-				},{
-					id:'002',
-					imgUrl:'http://img1.qunarzz.com/sight/p0/1505/f4/f455d92ba582f608.water.jpg_200x200_375e5775.jpg',
-					title:'南京汤山颐尚温泉',
-					desc:'融古今美酒之精华——有通筋活血'
-				},{
-					id:'003',
-					imgUrl:'http://img1.qunarzz.com/sight/p0/1505/f4/f455d92ba582f608.water.jpg_200x200_375e5775.jpg',
-					title:'南京汤山颐尚温泉',
-					desc:'融古今美酒之精华——有通筋活血'
-				}]
+				
 			}
+		},
+		props:{
+			recommendList:Array
 		}
 	}
 </script>
