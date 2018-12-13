@@ -22,7 +22,9 @@ export default {
 	},
 	data (){
 		return {
-			touchState:false
+			touchState:false,
+			startY:0,
+			timer:null
 		}
 	},
 	computed:{
@@ -34,6 +36,9 @@ export default {
 			return letters
 		}
 	},
+	update () {
+		this.startY = this.$refs['A'][0].offsetTop
+	},
 	methods:{
 		handClick (e) {
 			console.log(e.target.innerText)
@@ -44,12 +49,17 @@ export default {
 		},
 		handTouchMove (e) {
 			if(this.touchState){
-				const startY = this.$refs['A'][0].offsetTop
-				const touchY = e.touches[0].clientY - 86
-				const index = Math.floor((touchY - startY) / 20)
-				if (index >= 0 && index < this.letters.length) {
-					this.$emit('change',this.letters[index])
+				if (this.timer) {
+					clearTimeout(this.timer)
 				}
+				// 延迟16毫秒执行本次函数，如果在16毫秒内又执行本函数，则清除上次函数，执行本次函数，以此来提高性能
+				this.timer = setTimeout( () => {
+					const touchY = e.touches[0].clientY - 86
+					const index = Math.floor((touchY - this.startY) / 20)
+					if (index >= 0 && index < this.letters.length) {
+						this.$emit('change',this.letters[index])
+					}
+				},16)
 			}
 		},
 		handTouchEnd () {

@@ -5,14 +5,14 @@
 				<div class="title border-topbottom">当前城市</div>
 				<div class="button-list">
 					<div class="button-wrapper">
-						<div class="button">北京</div>
+						<div class="button">{{this.$store.state.city}}</div>
 					</div>
 				</div>
 			</div>
 			<div class="area">
 				<div class="title border-topbottom">热门城市</div>
 				<div class="button-list">
-					<div class="button-wrapper" v-for="item of hotCities">
+					<div class="button-wrapper" v-for="item of hotCities" @click="handClick(item.name)">
 						<div class="button">{{item.name}}</div>
 					</div>
 				</div>
@@ -20,7 +20,7 @@
 			<div class="area" v-for="(city,key) of cities" :key="key" :ref="key">
 				<div class="title border-topbottom">{{key}}</div>
 				<div class="item-list">
-					<div class="item border-bottom" v-for="item of city" :key="item.id">{{item.name}}</div>
+					<div class="item border-bottom" v-for="item of city" :key="item.id" @click="handClick(item.name)">{{item.name}}</div>
 				</div>
 			</div>
 		</div>
@@ -46,6 +46,16 @@ export default {
 				// console.log(element)
 				this.scroll.scrollToElement(element)
 			}
+		}
+	},
+	methods:{
+		handClick (obj) {
+			// console.log(obj)
+			this.$store.dispatch('changeCity',obj)
+			// 因为数量少，可以直接使用commit
+			// this.$store.commit('changeCity',obj)
+		// 页面跳转
+			this.$router.push('/')
 		}
 	}
 }
