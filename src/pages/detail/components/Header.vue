@@ -11,7 +11,7 @@
 			<router-link to="/">
 				<div class="iconfont header-fixed-icon">&#xe624;</div>
 			</router-link>
-			紫清湖生态温泉(AAAA景区)
+			{{sightName}}
 		</div>
 	</div>
 </template>
@@ -26,6 +26,9 @@ export default{
 				opacity:0
 			}
 		}
+	},
+	props:{
+		sightName:String
 	},
 	methods:{
 		handleScroll () {
@@ -66,6 +69,7 @@ export default{
 		background:rgba(0,0,0,.8)
 		border-radius:50%
 	.header-fixed
+		z-index:2
 		position:fixed
 		left:0
 		top:0

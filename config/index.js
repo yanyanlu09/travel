@@ -8,21 +8,30 @@ module.exports = {
   dev: {
 
     // Paths
+    env: require('./dev.env'),
+    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
         '/api':{
+            target: 'http://2191e626d6.51mypc.cn',
+            changeOrigin:true,
+            pathRewrite: {
+                '^/api': '/demo'
+            }
+        },
+        '/local':{
             target: 'http://localhost:8080',
             pathRewrite: {
-                '^/api': '/static/mock'
+                '^/local': '/static/mock'
             }
         }
     },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
+    
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-

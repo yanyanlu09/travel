@@ -30,7 +30,7 @@ export default {
 	},
 	methods:{
 		getCityInfo () {
-			axios.get('/api/city.json')
+			axios.get('/local/city.json')
 			.then(this.cityInfoSucc)
 		},
 		cityInfoSucc (res){

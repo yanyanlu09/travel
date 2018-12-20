@@ -1,14 +1,14 @@
 <template>
 	<div>
 		<div class="banner-content" @click="handClick()">
-			<img class="banner-pic" src="http://img1.qunarzz.com/sight/p0/1611/a2/a246388ce5e8330ea3.img.jpg_600x330_41fe50f4.jpg">
+			<img class="banner-pic" :src="bannerImg">
 			<div class="banner-bottom">
 				<div class="banner-title">
-					紫清湖生态温泉(AAAA景区)
+					{{sightName}}
 				</div>
 				<div class="banner-number">
 					<span class="iconfont banner-icon">&#xe674;</span>
-					34
+					{{imglength}}
 				</div>
 			</div>
 		</div>
@@ -26,12 +26,14 @@ export default {
 	},
 	data () {
 		return {
-			showGallary:false,
-			imgs:[
-				'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_800x800_70debc93.jpg',
-				'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_800x800_70debc93.jpg'
-			]
+			showGallary:false
 		}
+	},
+	props:{
+		imgs:Array,
+		bannerImg:String,
+		sightName:String,
+		imglength:Number
 	},
 	methods: {
 		handClick () {
